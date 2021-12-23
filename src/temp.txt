@@ -1,0 +1,43 @@
+        user_1.getAccount().getCard();
+        user_2.getAccount().getCard();
+
+        user_1.getAccount().setMoney(20000);
+        user_2.getAccount().setMoney(10000);
+
+        double check_1 = user_1.getAccount().getCard_Balance();
+        double check_2 = user_2.getAccount().getCard_Balance();
+
+        System.out.println("Баланс карты_1 до тарнзакции = " + check_1);
+        System.out.println("Баланс карты_2 до тарнзакции = " + check_2);
+
+
+        Transaction tr_1 = new Transaction(user_1.getAccount().getCard(), user_2.getAccount().getCard(), 8000);
+        tr_1.StartTransaction();
+        user_1.getAccount().AddTransaction(tr_1);
+
+
+        double check1 = user_1.getAccount().getCard_Balance();
+        double check2 = user_2.getAccount().getCard_Balance();
+
+        System.out.println("Баланс карты_1 после тарнзакции = " + check1);
+        System.out.println("Баланс карты_2 после тарнзакции = " + check2);
+
+        System.out.print("Карта_1: ");
+        user_1.getAccount().Balance_Up(2000);
+        System.out.print("Карта_2: ");
+        user_2.getAccount().Balance_Up(3000);
+
+        double check3 = user_1.getAccount().getCard_Balance();
+        double check4 = user_2.getAccount().getCard_Balance();
+
+        System.out.println("Баланс карты_1 после пополнения = " + check3);
+        System.out.println("Баланс карты_2 после пополнения = " + check4);
+
+
+
+
+        atm_machine1.Saving_down(user_1, 100);
+        check2 = user_1.getSavingAccount().getCard_Balance();
+        System.out.println("check3: " + check2);
+
+
